@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../styles/ProductDetail.css";
 
-function ProductDetail() {
+function ProductDetail({ handleAdd }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
@@ -41,7 +41,7 @@ function ProductDetail() {
           <h2>{product.name}</h2>
           <p className="product-price">${product.price}</p>
           <p className="product-description">{product.description}</p>
-          <button className="add-to-cart-button">Add to Cart</button>
+          <button className="add-to-cart-button" onClick={() => handleAdd(product)}>Add to Cart</button>
         </div>
       </div>
     </div>
