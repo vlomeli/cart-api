@@ -32,15 +32,17 @@ function ProductDetail() {
 
   return (
     <div className="product-detail-container">
-      <button onClick={() => navigate(-1)} className="back-button">
+      <button className="back-button" onClick={() => navigate(-1)}>
         ← Back
       </button>
       <div className="product-detail">
-        <h2>{product.name}</h2>
-        <img src={product.image} alt={product.name} />
-        <p>{product.description}</p>
-        <p>Price: ${product.price}</p>
-        <button className="add-to-cart-button">Add to Cart 🛒</button>
+        <img className="product-image" src={product.image} alt={product.name} />
+        <div className="product-info">
+          <h2>{product.name}</h2>
+          <p className="product-price">${product.price}</p>
+          <p className="product-description">{product.description}</p>
+          <button className="add-to-cart-button">Add to Cart</button>
+        </div>
       </div>
     </div>
   );
