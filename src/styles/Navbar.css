@@ -1,0 +1,26 @@
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
