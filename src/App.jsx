@@ -44,13 +44,17 @@ function App() {
       <Navbar cartItems={cartItems} onCartClick={() => setIsCartOpen(true)} />
 
       {isCartOpen && (
-        <CartSidebar
-          cartItems={cartItems}
-          handleAdd={handleAdd}
-          handleRemove={handleRemove}
-          handleDelete={handleDelete}
-          onClose={() => setIsCartOpen(false)}
-        />
+        <>
+          <div className="cart-backdrop" onClick={() => setIsCartOpen(false)} />
+
+          <CartSidebar
+            cartItems={cartItems}
+            handleAdd={handleAdd}
+            handleRemove={handleRemove}
+            handleDelete={handleDelete}
+            onClose={() => setIsCartOpen(false)}
+          />
+        </>
       )}
 
       <Routes>
