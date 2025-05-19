@@ -27,25 +27,29 @@ function CartSidebar({
       ) : (
         cartItems.map((item) => (
           <div key={item.id} className="cart-item">
-            <div className="cart-item-header">
-              <h3 className="cart-item-name">{item.name}</h3>
-              <p>
-                ${item.price}
-              </p>
-            </div>
+            <img src={item.image} alt={item.name} className="cart-item-image" />
 
-            <div className="cart-controls">
-              <button onClick={() => handleRemove(item)}>-</button>
-              <span>{item.quantity}</span>
-              <button onClick={() => handleAdd(item)}>+</button>
-            </div>
+            <div className="cart-item-details">
+              <div className="cart-item-header">
+                <h3 className="cart-item-name">{item.name}</h3>
+                <p>
+                  ${item.price}
+                </p>
+              </div>
 
-            <button
-              className="delete-button"
-              onClick={() => handleDelete(item.id)}
-            >
-              Remove
-            </button>
+              <div className="cart-controls">
+                <button onClick={() => handleRemove(item)}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => handleAdd(item)}>+</button>
+              </div>
+
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(item.id)}
+              >
+                Remove
+              </button>
+            </div>
           </div>
         ))
       )}
