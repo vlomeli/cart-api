@@ -16,9 +16,17 @@ This project is my submission for the Senior Web Development role at Digital Nes
 ## Tech Stack
 
 - React
-- CSS (with responsive design techniques)
+- Vanilla CSS
 - React Router for navigation
-- Local Storage API for persistence
+- Local Storage
+- External API
+
+---
+
+## Future Improvements
+
+- Improved Error Handling: While there is basic error handling in place, I’d like to add more user-friendly messaging, fallback UI components, and possibly retry options for failed API calls.
+- Item Search: Enhance the product filtering with a search input to allow real-time querying by name or description.
 
 ---
 
