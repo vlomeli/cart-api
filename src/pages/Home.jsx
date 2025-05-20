@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../utils/api";
 import ProductCard from "../components/ProductCard";
-import "../styles/Home.css";
+import Select from "react-select";
 import Loader from "../components/Loader";
+import "../styles/Home.css";
+
 
 function Home() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState({ value: "All", label: "All" });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,7 +23,11 @@ function Home() {
           "All",
           ...new Set(data.map((p) => p.category)),
         ];
-        setCategories(uniqueCategories);
+        const categoryOptions = uniqueCategories.map((cat) => ({
+          value: cat,
+          label: cat,
+        }));
+        setCategories(categoryOptions);
         setLoading(false);
       })
       .catch((err) => {
@@ -30,13 +36,12 @@ function Home() {
       });
   }, []);
 
-  const handleFilterChange = (e) => {
-    const category = e.target.value;
-    setSelectedCategory(category);
-    if (category === "All") {
+    const handleFilterChange = (selected) => {
+    setSelectedCategory(selected);
+    if (selected.value === "All") {
       setFilteredProducts(products);
     } else {
-      setFilteredProducts(products.filter((p) => p.category === category));
+      setFilteredProducts(products.filter((p) => p.category === selected.value));
     }
   };
 
@@ -47,14 +52,20 @@ function Home() {
     <div className="home-container">
       <div className="home-header">
         <h2>Our Products</h2>
-        <select value={selectedCategory} onChange={handleFilterChange}>
-          {categories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
+                <div className="select-wrapper">
+          <Select
+            options={categories}
+            value={selectedCategory}
+            onChange={handleFilterChange}
+            className="react-select-container"
+            classNamePrefix="react-select"
+            styles={{
+              menu: (base) => ({ ...base, zIndex: 9999 }),
+            }}
+          />
+        </div>
       </div>
+
 
       <div className="product-grid">
         {filteredProducts.map((product) => (
