@@ -6,7 +6,7 @@ import "./styles/Global.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/dn-shop">
       <App />
     </BrowserRouter>
   </StrictMode>
