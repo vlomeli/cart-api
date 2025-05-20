@@ -10,14 +10,19 @@ function Navbar({ cartItems, onCartClick }) {
         <Link to="/" className="logo">
           DigitalNEST Shop
         </Link>
-        <div className="cart-icon" onClick={onCartClick} style={{ cursor: "pointer" }}>
+        <div
+          className="cart-icon"
+          onClick={onCartClick}
+          style={{ cursor: "pointer" }}
+        >
           🛒
-          {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
+          {totalQuantity > 0 && (
+            <span className="cart-count">{totalQuantity}</span>
+          )}
         </div>
       </div>
     </nav>
   );
 }
-
 
 export default Navbar;

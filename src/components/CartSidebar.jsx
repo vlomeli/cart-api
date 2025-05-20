@@ -32,9 +32,7 @@ function CartSidebar({
             <div className="cart-item-details">
               <div className="cart-item-header">
                 <h3 className="cart-item-name">{item.name}</h3>
-                <p>
-                  ${item.price}
-                </p>
+                <p>${item.price}</p>
               </div>
 
               <div className="cart-controls">

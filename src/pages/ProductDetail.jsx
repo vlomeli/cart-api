@@ -4,7 +4,6 @@ import { fetchProductById } from "../utils/api";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
 
-
 import "../styles/ProductDetail.css";
 
 function ProductDetail({ handleAdd }) {
@@ -16,7 +15,7 @@ function ProductDetail({ handleAdd }) {
 
   useEffect(() => {
     async function getProduct() {
-       setLoading(true);
+      setLoading(true);
       try {
         const data = await fetchProductById(id);
         setProduct(data);
@@ -46,7 +45,12 @@ function ProductDetail({ handleAdd }) {
           <h2>{product.name}</h2>
           <p className="product-price">${product.price}</p>
           <p className="product-description">{product.description}</p>
-          <button className="add-to-cart-button" onClick={() => handleAdd(product)}>Add to Cart</button>
+          <button
+            className="add-to-cart-button"
+            onClick={() => handleAdd(product)}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
