@@ -25,8 +25,11 @@ This project is my submission for the Senior Web Development role at Digital Nes
 
 ## Future Improvements
 
-- Improved Error Handling: While there is basic error handling in place, I’d like to add more user-friendly messaging, fallback UI components, and possibly retry options for failed API calls.
-- Item Search: Enhance the product filtering with a search input to allow real-time querying by name or description.
+- **Improved Error Handling**: While there is basic error handling in place, I’d like to add more user-friendly messaging, fallback UI components, and possibly retry options for failed API calls.
+
+- **Item Search**: Enhance the product filtering with a search input to allow real-time querying by name or description.
+
+- **Environment Configuration & Security**: For a production-level application, I would externalize sensitive values like API URLs into environment variables using a `.env` file. This helps protect sensitive information and follows best practices for configuration management.
 
 ---
 
