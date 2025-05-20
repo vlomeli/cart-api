@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchProducts } from "../utils/api";
 import ProductCard from "../components/ProductCard";
 import "../styles/Home.css";
+import Loader from "../components/Loader";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -16,7 +17,10 @@ function Home() {
       .then((data) => {
         setProducts(data);
         setFilteredProducts(data);
-        const uniqueCategories = ["All", ...new Set(data.map(p => p.category))];
+        const uniqueCategories = [
+          "All",
+          ...new Set(data.map((p) => p.category)),
+        ];
         setCategories(uniqueCategories);
         setLoading(false);
       })
@@ -32,11 +36,11 @@ function Home() {
     if (category === "All") {
       setFilteredProducts(products);
     } else {
-      setFilteredProducts(products.filter(p => p.category === category));
+      setFilteredProducts(products.filter((p) => p.category === category));
     }
   };
 
-  if (loading) return <p>Loading products...</p>;
+  if (loading) return <Loader />;
   if (error) return <p> Error: {error}</p>;
 
   return (

@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchProductById } from "../utils/api";
 import { useNavigate } from "react-router-dom";
+import Loader from "../components/Loader";
+
 
 import "../styles/ProductDetail.css";
 
@@ -9,16 +11,19 @@ function ProductDetail({ handleAdd }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getProduct() {
+       setLoading(true);
       try {
         const data = await fetchProductById(id);
         setProduct(data);
+        setError(null);
       } catch (err) {
         setError(err.message);
+        setProduct(null);
       } finally {
         setLoading(false);
       }
@@ -26,7 +31,7 @@ function ProductDetail({ handleAdd }) {
     getProduct();
   }, [id]);
 
-  if (loading) return <div>Loading product...</div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error: {error}</div>;
   if (!product) return <p>Product not found.</p>;
 
