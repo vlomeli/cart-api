@@ -1,12 +1,25 @@
-# React + Vite
+This project is my submission for the Senior Web Development role at Digital Nest. It demonstrates my ability to build a functional and visually appealing frontend application using **React** and **CSS**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetches product data from an external API with proper asynchronous handling.
+- Utilizes React hooks like `useState` and `useEffect` to manage state and lifecycle events.
+- Implements filtering functionality with dynamic category selection.
+- Stores relevant data in **local storage** to persist user selections or cart items.
+- Clean, modular component structure for maintainability and scalability.
+- Responsive design with attention to UI/UX details for a polished look.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React
+- CSS (with responsive design techniques)
+- React Router for navigation
+- Local Storage API for persistence
+
+---
+
+Feel free to explore the project and review the code to see how these concepts are applied. Thank you for considering my application!

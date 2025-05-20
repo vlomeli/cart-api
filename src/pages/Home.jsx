@@ -46,7 +46,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="home-header">
-        <h2>Products</h2>
+        <h2>Our Products</h2>
         <select value={selectedCategory} onChange={handleFilterChange}>
           {categories.map((cat) => (
             <option key={cat} value={cat}>
