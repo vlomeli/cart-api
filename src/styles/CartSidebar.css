@@ -76,8 +76,8 @@
   color: white;
   padding: 5px 10px;
   border-radius: 3px;
-  min-width: 80px; /* minimum width */
-  max-width: 120px; /* maximum width */
+  min-width: 80px;
+  max-width: 120px;
   width: auto;
   cursor: pointer;
   margin-top: 8px;
@@ -110,7 +110,6 @@
   cursor: pointer;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .cart-sidebar {
     width: 100vw;

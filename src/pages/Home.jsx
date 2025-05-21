@@ -5,12 +5,14 @@ import Select from "react-select";
 import Loader from "../components/Loader";
 import "../styles/Home.css";
 
-
 function Home() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState({ value: "All", label: "All" });
+  const [selectedCategory, setSelectedCategory] = useState({
+    value: "All",
+    label: "All",
+  });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -36,12 +38,14 @@ function Home() {
       });
   }, []);
 
-    const handleFilterChange = (selected) => {
+  const handleFilterChange = (selected) => {
     setSelectedCategory(selected);
     if (selected.value === "All") {
       setFilteredProducts(products);
     } else {
-      setFilteredProducts(products.filter((p) => p.category === selected.value));
+      setFilteredProducts(
+        products.filter((p) => p.category === selected.value)
+      );
     }
   };
 
@@ -52,7 +56,7 @@ function Home() {
     <div className="home-container">
       <div className="home-header">
         <h2>Our Products</h2>
-                <div className="select-wrapper">
+        <div className="select-wrapper">
           <Select
             options={categories}
             value={selectedCategory}
@@ -65,7 +69,6 @@ function Home() {
           />
         </div>
       </div>
-
 
       <div className="product-grid">
         {filteredProducts.map((product) => (

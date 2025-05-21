@@ -26,7 +26,6 @@
   flex-shrink: 0;
 }
 
-/* Optional: tweak react-select’s appearance */
 .react-select__control {
   border: 1.5px solid #007bff;
   border-radius: 6px;
